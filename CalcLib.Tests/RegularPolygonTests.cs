@@ -14,12 +14,13 @@ namespace CalcLib.Tests {
         public void RegularPolygonCtorTests() {
             Assert.Throws<ArgumentException>(() => { RegularPolygon rp = new(0, 0); });
             Assert.Throws<ArgumentException>(() => { RegularPolygon rp = new(-1, -1); });
-            Assert.Throws<ArgumentException>(() => { RegularPolygon rp = new(0, 1); });
-            Assert.Throws<ArgumentException>(() => { RegularPolygon rp = new(1, 0); });
+            Assert.Throws<ArgumentException>(() => { RegularPolygon rp = new(2, 1); });
+            Assert.Throws<ArgumentException>(() => { RegularPolygon rp = new(1, 1); });
+            Assert.Throws<ArgumentException>(() => { RegularPolygon rp = new(3, 0); });
             Assert.Throws<ArgumentException>(() => { RegularPolygon rp = new(-1, 1); });
-            Assert.Throws<ArgumentException>(() => { RegularPolygon rp = new(1, -1); });
-            Assert.DoesNotThrow(() => { RegularPolygon rp = new(1, 1); });
-            Assert.DoesNotThrow(() => { RegularPolygon rp = new(1, 0.00001); });
+            Assert.Throws<ArgumentException>(() => { RegularPolygon rp = new(3, -1); });
+            Assert.DoesNotThrow(() => { RegularPolygon rp = new(3, 1); });
+            Assert.DoesNotThrow(() => { RegularPolygon rp = new(3, 0.00001); });
             Assert.DoesNotThrow(() => { RegularPolygon rp = new(9, 5); });
         }
 

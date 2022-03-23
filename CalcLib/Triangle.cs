@@ -50,15 +50,8 @@ namespace CalcLib {
             return true;
         }
 
-        public bool IsRegularPolygon() {
-            if((Sides[2] - Sides[1]) > comparisonTolerance // Math.Abs() is not required because Sides[] is sorted
-                || (Sides[1] - Sides[0]) > comparisonTolerance)
-                return false;
-            return true;
-        }
-
         public static implicit operator RegularPolygon(Triangle t) {
-            if(t.IsRegularPolygon())
+            if (RegularPolygon.IsRegularPolygon(t.Sides, t.comparisonTolerance))
                 return new RegularPolygon(3, t.Sides[0]);
             else
                 throw new InvalidCastException($"Cannot cast {typeof(Triangle).Name} to {typeof(RegularPolygon).Name} - sides of {typeof(Triangle).Name} are not equal");

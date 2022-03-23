@@ -77,16 +77,16 @@ namespace CalcLibTest {
         [Test]
         public void IsRegularPolygonTests() {
             Triangle t = new(3, 4, 5);
-            Assert.IsFalse(t.IsRegularPolygon());
+            Assert.IsFalse(RegularPolygon.IsRegularPolygon(t.GetSidesForTests(), t.GetComparisonToleranceForTests()));
 
             Triangle t2 = new(3, 3, 3);
-            Assert.IsTrue(t2.IsRegularPolygon());
+            Assert.IsTrue(RegularPolygon.IsRegularPolygon(t2.GetSidesForTests(), t2.GetComparisonToleranceForTests()));
 
             Triangle t3 = new(3, 3, 3.0007);
             t3.RelativeComparisonPrecision = Triangle.DEFAULT_PRECISION;
-            Assert.IsFalse(t3.IsRegularPolygon());
+            Assert.IsFalse(RegularPolygon.IsRegularPolygon(t3.GetSidesForTests(), t3.GetComparisonToleranceForTests()));
             t3.RelativeComparisonPrecision = 0.001;
-            Assert.IsTrue(t3.IsRegularPolygon());
+            Assert.IsTrue(RegularPolygon.IsRegularPolygon(t3.GetSidesForTests(), t3.GetComparisonToleranceForTests()));
         }
     }
 }
