@@ -1,0 +1,13 @@
+*.suo
+
+.vs/
+
+**/bin/
+**/bin/*
+**/obj/
+**/obj/*
+
+**/Debug/
+**/Release/
+**/Debug/*
+**/Release/*
