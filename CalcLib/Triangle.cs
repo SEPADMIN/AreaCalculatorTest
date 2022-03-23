@@ -57,7 +57,7 @@ namespace CalcLib {
                 throw new InvalidCastException($"Cannot cast {typeof(Triangle).Name} to {typeof(RegularPolygon).Name} - sides of {typeof(Triangle).Name} are not equal");
         }
 
-        public static explicit operator Triangle(RegularPolygon rp) {
+        public static implicit operator Triangle(RegularPolygon rp) {
 
             if(rp.GetSidesCount() == 3) {
                 double sideLength = rp.GetSideLength();
@@ -67,15 +67,13 @@ namespace CalcLib {
                 throw new InvalidCastException($"Cannot cast {typeof(RegularPolygon).Name} to {typeof(Triangle).Name} - sides count of {typeof(RegularPolygon).Name} is not 3");
         }
 
-#if DEBUG
-        internal List<double> GetSidesForTests() {
+        public List<double> GetSides() {
             return Sides;
         }
 
-        internal double GetComparisonToleranceForTests() {
+        public double GetComparisonTolerance() {
             return comparisonTolerance;
         }
-#endif
 
         public override string ToString() {
             return "Object of type: " + typeof(Triangle).Name + ", sides: "

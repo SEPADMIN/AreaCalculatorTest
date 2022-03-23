@@ -21,7 +21,7 @@ namespace AreaCalculator {
             Console.WriteLine($"{nameof(regularTriangle)} info:\n" + regularTriangle);
             Console.WriteLine($"{nameof(regularTriangle)} area is: " + RegulartriangleArea.ToString("0.00"));
             Console.WriteLine($"{nameof(regularTriangle)} is orthogonal: {regularTriangle.IsOrthogonal()}");
-            Console.WriteLine($"{nameof(regularTriangle)} is a regular polygon: {regularTriangle.IsRegularPolygon()}");
+            Console.WriteLine($"{nameof(regularTriangle)} is a regular polygon: {RegularPolygon.IsRegularPolygon(regularTriangle.GetSides())}");
             Console.WriteLine();
 
             RegularPolygon castedRegularTriangle = regularTriangle;
@@ -33,7 +33,7 @@ namespace AreaCalculator {
             Console.WriteLine($"{nameof(backCastedRegularTriangle)} info:\n" + backCastedRegularTriangle);
             Console.WriteLine($"{nameof(backCastedRegularTriangle)} area is: " + backCastedRegularTriangleArea.ToString("0.00"));
             Console.WriteLine($"{nameof(backCastedRegularTriangle)} is orthogonal: {backCastedRegularTriangle.IsOrthogonal()}");
-            Console.WriteLine($"{nameof(backCastedRegularTriangle)} is a regular polygon: {backCastedRegularTriangle.IsRegularPolygon()}");
+            Console.WriteLine($"{nameof(backCastedRegularTriangle)} is a regular polygon: {RegularPolygon.IsRegularPolygon(backCastedRegularTriangle.GetSides())}");
             Console.WriteLine();
 
             Triangle orthogonalTriangle = new(3, 4, 5);
@@ -41,7 +41,7 @@ namespace AreaCalculator {
             Console.WriteLine($"{nameof(orthogonalTriangle)} info:\n" + orthogonalTriangle);
             Console.WriteLine($"{nameof(orthogonalTriangle)} area is: " + orthogonalTriangleArea.ToString("0.00"));
             Console.WriteLine($"{nameof(orthogonalTriangle)} is orthogonal: {orthogonalTriangle.IsOrthogonal()}");
-            Console.WriteLine($"{nameof(orthogonalTriangle)} is a regular polygon: {orthogonalTriangle.IsRegularPolygon()}");
+            Console.WriteLine($"{nameof(orthogonalTriangle)} is a regular polygon: {RegularPolygon.IsRegularPolygon(orthogonalTriangle.GetSides())}");
             Console.ReadLine();
         }
     }
